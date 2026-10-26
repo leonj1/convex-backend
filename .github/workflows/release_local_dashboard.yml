@@ -65,7 +65,7 @@ jobs:
             digest: ${{ steps.build-image.outputs.digest }}
 
   read:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     needs: [build]
     steps:
       - uses: cloudposse/github-action-matrix-outputs-read@v1
